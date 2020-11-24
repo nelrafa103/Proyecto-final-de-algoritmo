@@ -2,6 +2,6 @@
 #include <math.h>
 #include "theater.h"
 int main(){
-    printf("Hola");
+    Registra_ventas(NULL);
     return 0;
 }
