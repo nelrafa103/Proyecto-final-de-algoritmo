@@ -2,6 +2,6 @@
 #include <math.h>
 #include "theater.h"
 int main(){
-    Registra_ventas(NULL);
+    Registrar_montos();
     return 0;
 }
