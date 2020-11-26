@@ -23,8 +23,8 @@ Tipo de nombramiento de variables: lower Camelcase
  *Seguir una estructura de nombramiento (No utilizar por ejemplo)
   : getUserInformation()
     getUserName()
-    UserName()
-   
+    userName()
+    
 
    Uso correcto -> get_user_information()
    
