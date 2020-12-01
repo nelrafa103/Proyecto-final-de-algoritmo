@@ -11,3 +11,22 @@ y el vendedor con mayor y menor venta realizada.
 3.
 Matriz Ventas Vendedor por Ciudad, este mostrará el total de ventas realizadas
 por cada vendedor en cada ciudad
+
+Tipo de nombramiento de variables: lower Camelcase
+
+-Control de calidad:
+
+ *No tener codigo espaguetti
+ *No tener bugs
+ *Cumplir con los requisitos impuestos
+ *No repetir el codigo 
+ *Seguir una estructura de nombramiento (No utilizar por ejemplo)
+  : getUserInformation()
+    getUserName()
+    userName()
+    
+
+   Uso correcto -> get_user_information()
+   
+
+   

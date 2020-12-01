@@ -1,4 +1,0 @@
-int function_1(){
-
-}
-
