@@ -8,6 +8,7 @@ struct Montos
 	int montos_per_ciudad[10];
 	int montos_per_vendedor[10][15];
 	int monto_total_per_vendedor[15];
+	int cantidad_ciudades_visitidas[15];
 	int totalidad;
 } Informaciones;
 void Borrar_consola(){
@@ -82,6 +83,7 @@ int Registrar_montos()
 			  continue;
 			}
 			printf("\n");
+			Informaciones.cantidad_ciudades_visitidas[opcion_3 - 1] += 1;
 			Informaciones.montos_per_vendedor[opcion_2 - 1][opcion_3 - 1] += opcion_4;
 			
 		}
@@ -179,13 +181,15 @@ int Montos_per_vendedor()
 	printf("\tListado de ventas por empleados\t \n");
 	printf("\t%s \n", separador);
 	printf("\t\tMonto vendido\t\t");
+	printf("Cantidad de ciudades vendidas");
 	printf("\t\tId empleado\n");
 	float monto_mayor[2] = {0,0};
 	float monto_menor[2] = {0,1};
 	while (i < sizeof(Informaciones.monto_total_per_vendedor) / sizeof(Informaciones.monto_total_per_vendedor[0]))
 	{
 		printf("\t\t%d\t", Informaciones.monto_total_per_vendedor[i]);
-		printf("\t\t\t\t%d\n", i + 1);
+		printf("\t\t%d",Informaciones.cantidad_ciudades_visitidas[i]);
+		printf("\t\t\t\t\t%d\n", i + 1);
 
 		if (Informaciones.monto_total_per_vendedor[i] > monto_mayor[1])
 		{
