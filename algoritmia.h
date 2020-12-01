@@ -103,7 +103,7 @@ int Montos_per_ciudad()
 		}
 
 		i = 0;
-	
+	   // printf("%d\n",monto_total);
 		Informaciones.montos_per_ciudad[x] = monto_total;
 		monto_total = 0;
 	}
@@ -130,7 +130,16 @@ int Montos_per_ciudad()
 		}
 		x += 1;
 	}
+	Informaciones.totalidad = 0;
+	for(int r = 0; r < sizeof(Informaciones.montos_per_ciudad) / sizeof(Informaciones.montos_per_ciudad[0]); r+= 1){
+	  Informaciones.totalidad += Informaciones.montos_per_ciudad[r];
+	  //printf("%d,%d\n",Informaciones.totalidad,Informaciones.monto_total_per_vendedor[r]);
+	}
 	printf("\t%s\n", separador);
+	printf("\tMonto total:");
+    printf("\t%d\n", Informaciones.totalidad);
+	printf("\t%s\n", separador);
+
 	printf("Ciudad con mayor venta:\tId:\t%d\tMonto:\t%f\n", (int)monto_mayor[0], monto_mayor[1]);
 	printf("Ciudad con menor venta:\tId:\t%d\tMonto:\t%f\n", (int)monto_menor[0], monto_menor[1]);
 	printf("Digite cualquier tecla para continuar\n");
@@ -160,8 +169,10 @@ int Montos_per_vendedor()
 			i += 1;
 		}
 		i = 0;
+		//printf("%d\n",monto_total);
 		Informaciones.monto_total_per_vendedor[z] = monto_total;
 		monto_total = 0;
+	
 	}
 
 	i = 0;
@@ -188,8 +199,10 @@ int Montos_per_vendedor()
 		}
 		i += 1;
 	}
+	Informaciones.totalidad = 0;
 	for(int r = 0; r < sizeof(Informaciones.monto_total_per_vendedor) / sizeof(Informaciones.monto_total_per_vendedor[0]); r+= 1){
-      Informaciones.totalidad += Informaciones.monto_total_per_vendedor[r];
+	  Informaciones.totalidad += Informaciones.monto_total_per_vendedor[r];
+	//  printf("%d,%d\n",Informaciones.totalidad,Informaciones.monto_total_per_vendedor[r]);
 	}
 	printf("\t%s\n", separador);
 	printf("\tMonto total:");
