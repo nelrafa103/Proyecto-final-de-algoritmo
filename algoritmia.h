@@ -113,7 +113,7 @@ int Montos_per_ciudad()
 	printf("Id ciudad\n");
 	x = 0;
 	float monto_mayor[2] = {0, 0};
-	float monto_menor[2] = {0, 0};
+	float monto_menor[2] = {0,Informaciones.montos_per_ciudad[0]};
 	while (x < sizeof(Informaciones.montos_per_ciudad) / sizeof(Informaciones.montos_per_ciudad[0]))
 	{
 		printf("\t\t%d\t\t", Informaciones.montos_per_ciudad[x]);
@@ -131,8 +131,8 @@ int Montos_per_ciudad()
 		x += 1;
 	}
 	printf("\t%s\n", separador);
-	printf("Ciudad con mayor venta:\tId:\t%f\tMonto:\t%f\n", monto_mayor[0], monto_mayor[1]);
-	printf("Ciudad con menor venta:\tId:\t%f\tMonto:\t%f\n", monto_menor[0], monto_menor[1]);
+	printf("Ciudad con mayor venta:\tId:\t%d\tMonto:\t%f\n", (int)monto_mayor[0], monto_mayor[1]);
+	printf("Ciudad con menor venta:\tId:\t%d\tMonto:\t%f\n", (int)monto_menor[0], monto_menor[1]);
 	printf("Digite cualquier tecla para continuar\n");
 	getchar();
 	getchar();
@@ -169,22 +169,22 @@ int Montos_per_vendedor()
 	printf("\t%s \n", separador);
 	printf("\t\tMonto vendido\t\t");
 	printf("\t\tId empleado\n");
-	float monto_mayor[2] = {0, 0};
-	float monto_menor[2] = {0, 0};
+	float monto_mayor[2] = {0,0};
+	float monto_menor[2] = {0,1};
 	while (i < sizeof(Informaciones.monto_total_per_vendedor) / sizeof(Informaciones.monto_total_per_vendedor[0]))
 	{
 		printf("\t\t%d\t", Informaciones.monto_total_per_vendedor[i]);
 		printf("\t\t\t\t%d\n", i + 1);
 
-		if (Informaciones.monto_total_per_vendedor[x] > monto_mayor[1])
+		if (Informaciones.monto_total_per_vendedor[i] > monto_mayor[1])
 		{
-			monto_mayor[0] = x + 1;
-			monto_mayor[1] = Informaciones.monto_total_per_vendedor[x];
+			monto_mayor[0] = i + 1;
+			monto_mayor[1] = Informaciones.monto_total_per_vendedor[i];
 		}
-		if (Informaciones.monto_total_per_vendedor[x] < monto_menor[1])
+		if (Informaciones.monto_total_per_vendedor[i] <= monto_menor[1])
 		{
-			monto_menor[0] = x + 1;
-			monto_menor[1] = Informaciones.monto_total_per_vendedor[x];
+			monto_menor[0] = i + 1;
+			monto_menor[1] = Informaciones.monto_total_per_vendedor[i];
 		}
 		i += 1;
 	}
@@ -195,8 +195,8 @@ int Montos_per_vendedor()
 	printf("\tMonto total:");
     printf("\t%d\n", Informaciones.totalidad);
 	printf("\t%s\n", separador);
-	printf("Empleado con mayor venta:\tId:\t%f\tMonto:\t%f\n", monto_mayor[0], monto_mayor[1]);
-	printf("Empleado con menor venta:\tId:\t%f\tMonto:\t%f\n", monto_menor[0], monto_menor[1]);
+	printf("Empleado con mayor venta:\tId:\t%d\tMonto:\t%f\n", (int)monto_mayor[0], monto_mayor[1]);
+	printf("Empleado con menor venta:\tId:\t%d\tMonto:\t%f\n", (int)monto_menor[0], monto_menor[1]);
 
 	printf("Digite cualquier tecla para continuar\n");
 	getchar();
