@@ -83,8 +83,7 @@ int Registrar_montos()
 			}
 			printf("\n");
 			Informaciones.montos_per_vendedor[opcion_2 - 1][opcion_3 - 1] += opcion_4;
-			//	 printf("%d",Informaciones.montos_per_vendedor[0][0]);
-			//   printf("%d",Informaciones.montos_per_vendedor[0][1]);
+			
 		}
 	}
 }
@@ -98,13 +97,13 @@ int Montos_per_ciudad()
 	{
 		while (i < 15)
 		{
-			//printf("%d",Informaciones.montos_per_vendedor[x][i]);
+			
 			monto_total += Informaciones.montos_per_vendedor[x][i];
 			i += 1;
 		}
 
 		i = 0;
-	//	printf("%d", monto_total);
+	
 		Informaciones.montos_per_ciudad[x] = monto_total;
 		monto_total = 0;
 	}
@@ -119,7 +118,6 @@ int Montos_per_ciudad()
 	{
 		printf("\t\t%d\t\t", Informaciones.montos_per_ciudad[x]);
 		printf("\t%d\n", x + 1);
-		//printf("%d\n", x + 1);
 		if (Informaciones.montos_per_ciudad[x] > monto_mayor[1])
 		{
 			monto_mayor[0] = x + 1;
@@ -130,7 +128,6 @@ int Montos_per_ciudad()
 			monto_menor[0] = x + 1;
 			monto_menor[1] = Informaciones.montos_per_ciudad[x];
 		}
-		//printf("%s\n",ciudades_disponibles[x]);
 		x += 1;
 	}
 	printf("\t%s\n", separador);
@@ -197,7 +194,6 @@ int Montos_per_vendedor()
 	printf("\t%s\n", separador);
 	printf("\tMonto total:");
     printf("\t%d\n", Informaciones.totalidad);
-	//printf("%s\n",ciudades_disponibles[x]);
 	printf("\t%s\n", separador);
 	printf("Empleado con mayor venta:\tId:\t%f\tMonto:\t%f\n", monto_mayor[0], monto_mayor[1]);
 	printf("Empleado con menor venta:\tId:\t%f\tMonto:\t%f\n", monto_menor[0], monto_menor[1]);
@@ -255,11 +251,9 @@ int Matriz_ventas()
 	x = 0;
 	i = 0;
 	printf("\t\t\t\t\tId de ciudades visitadas\t\t\t\t\t\n");
-//	printf("\n");
-//	printf("\n");
 	printf("Id empleado");
     for(int i = 0; i < sizeof(Informaciones.montos_per_vendedor) / sizeof(Informaciones.montos_per_vendedor[0]); i+= 1){
-      printf("\t%d",i + 1);
+      printf("\t%4d",i + 1);
 	}
 	printf("\tTotal");
 	printf("\n");
@@ -267,17 +261,15 @@ int Matriz_ventas()
 	for(i = 0; i < 15; i+= 1){
 	  printf("\t%d",i + 1);
       while(x < 10){
-       printf("\t%d",Informaciones.montos_per_vendedor[x][i]);
+       printf("\t%4d",Informaciones.montos_per_vendedor[x][i]);
 	   x+= 1;
 	   }	
 	   x = 0;
-	   printf("\t%d",Informaciones.monto_total_per_vendedor[i]);
+	   printf("\t%4d",Informaciones.monto_total_per_vendedor[i]);
 	   printf("\n");
 	
 	}
 	printf("\n");
-  //  printf("Monto total\t");
-   // printf("%d\n", Informaciones.totalidad);
 	printf("Digite cualquier tecla para continuar\n");
 	getchar();
 	getchar();
